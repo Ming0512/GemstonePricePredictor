@@ -38,7 +38,7 @@ def predict_datapoint():
         results = round(pred[0],2)
         return render_template('index.html',results=results,pred_df = pred_df)
     
-@app.route('/predictAPI',methods=['POST'])
+@app.route('/predictAPI',methods=['GET','POST'])
 @cross_origin()
 def predict_api():
     if request.method=='POST':
